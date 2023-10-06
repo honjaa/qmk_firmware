@@ -272,7 +272,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
  [_RM_SYM] = LAYOUT(NO_EXLM, NO_HASH, NO_LBRC, NO_RBRC, NO_PIPE,                                 KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
 		    NO_AT, NO_DLR,TD(DANCE_10) , TD(DANCE_11), NO_BSLS,                          OSM(MOD_RALT), OSM(MOD_LSFT), OSM(MOD_LCTL),  OSM(MOD_LGUI), OSM(MOD_LALT),
-		    NO_PERC, NO_CIRC, NO_LCBR,NO_RCBR ,NO_TILD ,                                 KC_F12, KC_TRANSPARENT, KC_ESC, KC_TRANSPARENT, KC_TRANSPARENT,
+		    NO_PERC, NO_CIRC, NO_LCBR,NO_RCBR ,NO_TILD ,                                 KC_F12, KC_TRANSPARENT, NO_DIAE, KC_TRANSPARENT, KC_TRANSPARENT,
 		    KC_TRANSPARENT,KC_TRANSPARENT,                        KC_TRANSPARENT, KC_TRANSPARENT),
 
  [_NAV] = LAYOUT(MACRO_QUIT, LCTL(KC_W), KC_TRANSPARENT, LCTL(KC_R), LCTL(KC_T),                 LCTL(LALT(KC_L)), KC_HOME, KC_PGDN, KC_PGUP, KC_END,
