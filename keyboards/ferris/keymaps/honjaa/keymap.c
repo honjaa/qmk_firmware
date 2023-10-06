@@ -49,8 +49,8 @@ enum tap_dance_codes {
 const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
 //const uint16_t PROGMEM hj_combo[] = {KC_H, KC_J, COMBO_END};
 //const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
-const uint16_t PROGMEM ap_combo[] = {KC_A,KC_P, COMBO_END};
-const uint16_t PROGMEM aoe_combo[] = {KC_A,NO_OSTR, COMBO_END};
+//const uint16_t PROGMEM ap_combo[] = {KC_A,KC_P, COMBO_END};
+//const uint16_t PROGMEM aoe_combo[] = {KC_A,NO_OSTR, COMBO_END};
 const uint16_t PROGMEM qp_combo[] = {KC_Q,KC_P, COMBO_END};
 const uint16_t PROGMEM cdash_combo[] = {KC_C,NO_MINS, COMBO_END};
 const uint16_t PROGMEM cplus_combo[] = {KC_C,NO_PLUS, COMBO_END};
@@ -71,8 +71,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(df_combo, KC_DEL),
     //    COMBO(hj_combo, KC_ENT),
     //    COMBO(sd_combo, KC_DEL),
-    COMBO(ap_combo, NO_ARNG),
-    COMBO(aoe_combo, NO_AE),
+    //    COMBO(ap_combo, NO_ARNG),
+    //    COMBO(aoe_combo, NO_AE),
     COMBO(qp_combo, QK_BOOT),
     COMBO(cdash_combo,QK_REBOOT),
     COMBO(cplus_combo,QK_REBOOT),
