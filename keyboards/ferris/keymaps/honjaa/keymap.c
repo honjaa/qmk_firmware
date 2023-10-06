@@ -39,7 +39,7 @@ enum tap_dance_codes {
   DANCE_8,
   DANCE_9,
   DANCE_10,
-  DANCE_11,  
+  DANCE_11,
 };
 
 
@@ -140,7 +140,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [DANCE_8] = ACTION_TAP_DANCE_TAP_HOLD(KC_8, LGUI(KC_8)),
     [DANCE_9] = ACTION_TAP_DANCE_TAP_HOLD(KC_9, LGUI(KC_9)),
     [DANCE_10] = ACTION_TAP_DANCE_DOUBLE(NO_LPRN, NO_LABK), // ( on hold < on double tap
-    [DANCE_11] = ACTION_TAP_DANCE_DOUBLE(NO_RPRN, NO_RABK), // ) on hold > on double tap                                          
+    [DANCE_11] = ACTION_TAP_DANCE_DOUBLE(NO_RPRN, NO_RABK), // ) on hold > on double tap
 };
 
 
@@ -260,8 +260,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
  const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
- [_BASE] = LAYOUT(KC_Q, KC_W, KC_E, KC_R, KC_T,                                             KC_Y, KC_U, KC_I, KC_O, KC_P,
-                  KC_A, KC_S, KC_D, KC_F, KC_G,                                                  KC_H, KC_J, KC_K, KC_L, NO_OSTR,
+   [_BASE] = LAYOUT(KC_Q, KC_W, KC_E, KC_R, KC_T,                                             KC_Y, KC_U, KC_I, KC_O, KC_P,
+		    KC_A, KC_S, KC_D, KC_F, KC_G,                                                  KC_H, KC_J, KC_K, KC_L, NO_OSTR,
 		  KC_Z, KC_X, KC_C, KC_V, KC_B,                                                  KC_N, KC_M, KC_COMM, KC_DOT, NO_MINS,
 		  LT(_LM_NUM,KC_ESC), LT(_NAV,KC_BACKSPACE),                                     LT(_MOUSE,KC_SPC), LT(_RM_SYM,KC_ENT)),
 
