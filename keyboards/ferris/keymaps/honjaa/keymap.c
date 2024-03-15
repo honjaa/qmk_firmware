@@ -28,7 +28,7 @@ enum custom_keycodes {
 
 //tap dance declarations
 enum tap_dance_codes {
-  DANCE_0 ,  
+  DANCE_0 ,
   DANCE_1,
   DANCE_2,
   DANCE_3,
@@ -38,8 +38,10 @@ enum tap_dance_codes {
   DANCE_7,
   DANCE_8,
   DANCE_9,
-  DANCE_10,
-  DANCE_11,
+  DANCE_PARENS_START,
+  DANCE_PARENS_END,
+  DANCE_BRK_START,
+  DANCE_BRK_END, 
 };
 
 
@@ -51,19 +53,19 @@ const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
 //const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
 //const uint16_t PROGMEM ap_combo[] = {KC_A,KC_P, COMBO_END};
 //const uint16_t PROGMEM aoe_combo[] = {KC_A,NO_OSTR, COMBO_END};
-const uint16_t PROGMEM qp_combo[] = {KC_Q,KC_P, COMBO_END};
-const uint16_t PROGMEM cdash_combo[] = {KC_C,NO_MINS, COMBO_END};
-const uint16_t PROGMEM cplus_combo[] = {KC_C,NO_PLUS, COMBO_END};
-const uint16_t PROGMEM leftcurdash_combo[] = {NO_LCBR,NO_MINS, COMBO_END};
-const uint16_t PROGMEM fg_combo[] = {KC_F,KC_G, COMBO_END};
-const uint16_t PROGMEM aq_combo[] = {KC_A,KC_Q, COMBO_END};
-const uint16_t PROGMEM sw_combo[] = {KC_S,KC_W, COMBO_END};
-const uint16_t PROGMEM de_combo[] = {KC_D,KC_E, COMBO_END};
-const uint16_t PROGMEM fr_combo[] = {KC_F,KC_R, COMBO_END};
-const uint16_t PROGMEM ju_combo[] = {KC_J,KC_U, COMBO_END};
-const uint16_t PROGMEM ki_combo[] = {KC_K,KC_I, COMBO_END};
-const uint16_t PROGMEM lo_combo[] = {KC_L,KC_O, COMBO_END};
-const uint16_t PROGMEM oslashp_combo[] = {NO_OSTR,KC_P, COMBO_END};
+const uint16_t PROGMEM flash_combo[] = {KC_Q,KC_P, COMBO_END};
+const uint16_t PROGMEM reboot1_combo[] = {KC_C,NO_MINS, COMBO_END};
+const uint16_t PROGMEM reboot2_combo[] = {KC_C,NO_PLUS, COMBO_END};
+const uint16_t PROGMEM reboot3_combo[] = {NO_LCBR,NO_MINS, COMBO_END};
+const uint16_t PROGMEM del_combo[] = {KC_F,KC_G, COMBO_END};
+//const uint16_t PROGMEM lalt1_combo[] = {KC_A,KC_Q, COMBO_END};
+//const uint16_t PROGMEM win1_combo[] = {KC_S,KC_W, COMBO_END};
+//const uint16_t PROGMEM lctl1_combo[] = {KC_D,KC_E, COMBO_END};
+//const uint16_t PROGMEM lsft1_combo[] = {KC_F,KC_R, COMBO_END};
+//const uint16_t PROGMEM lsft2_combo[] = {KC_J,KC_U, COMBO_END};
+//const uint16_t PROGMEM lctl2_combo[] = {KC_K,KC_I, COMBO_END};
+//const uint16_t PROGMEM win2_combo[] = {KC_L,KC_O, COMBO_END};
+//const uint16_t PROGMEM lalt2_combo[] = {NO_OSTR,KC_P, COMBO_END};
 
 
 //combo definitions
@@ -73,19 +75,19 @@ combo_t key_combos[COMBO_COUNT] = {
     //    COMBO(sd_combo, KC_DEL),
     //    COMBO(ap_combo, NO_ARNG),
     //    COMBO(aoe_combo, NO_AE),
-    COMBO(qp_combo, QK_BOOT),
-    COMBO(cdash_combo,QK_REBOOT),
-    COMBO(cplus_combo,QK_REBOOT),
-    COMBO(leftcurdash_combo,QK_REBOOT),
-    COMBO(fg_combo,KC_DEL),
-    COMBO(aq_combo,KC_LALT),
-    COMBO(sw_combo,KC_LGUI),
-    COMBO(de_combo,KC_LCTL),
-    COMBO(fr_combo,KC_LSFT),
-    COMBO(ju_combo,KC_LSFT),
-    COMBO(ki_combo,KC_LCTL),
-    COMBO(lo_combo,KC_LGUI),
-    COMBO(oslashp_combo,KC_LALT),
+    COMBO(flash_combo, QK_BOOT),
+    COMBO(reboot1_combo,QK_REBOOT),
+    COMBO(reboot2_combo,QK_REBOOT),
+    COMBO(reboot3_combo,QK_REBOOT),
+    //    COMBO(del_combo,KC_DEL),
+    //    COMBO(lalt1_combo,KC_LALT),
+    //    COMBO(win1_combo,KC_LGUI),
+    //    COMBO(lctl1_combo,KC_LCTL),
+    //    COMBO(lsft1_combo,KC_LSFT),
+    //    COMBO(lsft2_combo,KC_LSFT),
+    //    COMBO(lctl2_combo,KC_LCTL),
+    //    COMBO(win2_combo,KC_LGUI),
+    //    COMBO(lalt2_combo,KC_LALT),
 
 };
 
@@ -140,8 +142,10 @@ tap_dance_action_t tap_dance_actions[] = {
     [DANCE_7] = ACTION_TAP_DANCE_TAP_HOLD(KC_7, LGUI(KC_7)),
     [DANCE_8] = ACTION_TAP_DANCE_TAP_HOLD(KC_8, LGUI(KC_8)),
     [DANCE_9] = ACTION_TAP_DANCE_TAP_HOLD(KC_9, LGUI(KC_9)),
-    [DANCE_10] = ACTION_TAP_DANCE_DOUBLE(NO_LPRN, NO_LABK), // ( on hold < on double tap
-    [DANCE_11] = ACTION_TAP_DANCE_DOUBLE(NO_RPRN, NO_RABK), // ) on hold > on double tap
+    [DANCE_PARENS_START] = ACTION_TAP_DANCE_DOUBLE(NO_LPRN, NO_LABK), // ( on hold < on double tap
+    [DANCE_PARENS_END] = ACTION_TAP_DANCE_DOUBLE(NO_RPRN, NO_RABK), // ) on hold > on double tap
+    [DANCE_BRK_START] = ACTION_TAP_DANCE_DOUBLE(NO_LBRC, NO_LCBR), // [ on hold { on double tap
+    [DANCE_BRK_END] = ACTION_TAP_DANCE_DOUBLE(NO_RBRC, NO_RCBR), // ] on hold } on double tap
 };
 
 
@@ -261,8 +265,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
  const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-   [_BASE] = LAYOUT(KC_Q, KC_W, KC_E, KC_R, KC_T,                                             KC_Y, KC_U, KC_I, KC_O, KC_P,
-		    KC_A, KC_S, KC_D, KC_F, KC_G,                                                  KC_H, KC_J, KC_K, KC_L, NO_OSTR,
+ [_BASE] = LAYOUT(KC_Q, KC_W, KC_E, KC_R, KC_T,                                                 KC_Y, KC_U, KC_I, KC_O, KC_P,
+		  KC_A, KC_S, KC_D, KC_F, KC_G,                                                  KC_H, KC_J, KC_K, KC_L, NO_OSTR,
 		  KC_Z, KC_X, KC_C, KC_V, KC_B,                                                  KC_N, KC_M, KC_COMM, KC_DOT, NO_MINS,
 		  LT(_LM_NUM,KC_ESC), LT(_NAV,KC_BACKSPACE),                                     LT(_MOUSE,KC_SPC), LT(_RM_SYM,KC_ENT)),
 
@@ -271,8 +275,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_F11,      TD(DANCE_0), TD(DANCE_1),TD(DANCE_2), TD(DANCE_3), NO_PLUS,
 		                    KC_TRANSPARENT,  KC_TRANSPARENT,                             TD(DANCE_0),KC_TRANSPARENT),
 
- [_RM_SYM] = LAYOUT(NO_EXLM, NO_HASH, NO_LBRC, NO_RBRC, NO_PIPE,                                 KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-		    NO_AT, NO_DLR,TD(DANCE_10) , TD(DANCE_11), NO_BSLS,                          OSM(MOD_RALT), OSM(MOD_LSFT), OSM(MOD_LCTL),  OSM(MOD_LGUI), OSM(MOD_LALT),
+ [_RM_SYM] = LAYOUT(NO_EXLM, NO_HASH, TD(DANCE_BRK_START), TD(DANCE_BRK_END), NO_PIPE,                                 KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
+		    NO_AT, NO_DLR,TD(DANCE_PARENS_START) , TD(DANCE_PARENS_END), NO_BSLS,                          OSM(MOD_RALT), OSM(MOD_LSFT), OSM(MOD_LCTL),  OSM(MOD_LGUI), OSM(MOD_LALT),
 		    NO_PERC, NO_CIRC, NO_LCBR,NO_RCBR ,NO_TILD ,                                 KC_F12, KC_TRANSPARENT, NO_DIAE, KC_TRANSPARENT, KC_TRANSPARENT,
 		                           NO_RABK,NO_LABK,                                      KC_TRANSPARENT, KC_TRANSPARENT),
 
