@@ -25,6 +25,7 @@ AUDIO_ENABLE = no           # Audio output
 SPLIT_KEYBOARD = yes        # Use shared split_common code
 LAYOUTS = split_3x5_2
 CONFIG_USB_ACM = yes        #recommended for atmega32u4 on linux
+CAPS_WORD_ENABLE = yes      #enable caps word
 
 #recommended to save space
 LTO_ENABLE = yes 	    # Link time optimization
