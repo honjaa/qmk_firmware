@@ -67,6 +67,7 @@ const uint16_t PROGMEM del_combo[] = {KC_F,KC_G, COMBO_END};
 //const uint16_t PROGMEM win2_combo[] = {KC_L,KC_O, COMBO_END};
 //const uint16_t PROGMEM lalt2_combo[] = {NO_OSTR,KC_P, COMBO_END};
 const uint16_t PROGMEM zdash_combo[] = {KC_Z,NO_MINS, COMBO_END};
+const uint16_t PROGMEM ty_combo[] = {KC_T,KC_Y, COMBO_END};
 
 
 //combo definitions
@@ -90,6 +91,7 @@ combo_t key_combos[COMBO_COUNT] = {
     //    COMBO(win2_combo,KC_LGUI),
     //    COMBO(lalt2_combo,KC_LALT),
     COMBO(zdash_combo,QK_CAPS_WORD_TOGGLE),
+    COMBO(ty_combo,LCTL(LALT(KC_L))),
 };
 
 // define tapdance hold
@@ -281,9 +283,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		    NO_PERC, NO_CIRC, NO_LCBR,NO_RCBR ,NO_TILD ,                                 KC_F12, KC_TRANSPARENT, NO_DIAE, KC_TRANSPARENT, KC_TRANSPARENT,
 		                           NO_RABK,NO_LABK,                                      KC_TRANSPARENT, KC_TRANSPARENT),
 
- [_NAV] = LAYOUT(MACRO_QUIT, LCTL(KC_W), KC_TRANSPARENT, LCTL(KC_R), LCTL(KC_T),                 LCTL(LALT(KC_L)), KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+ [_NAV] = LAYOUT(MACRO_QUIT, LCTL(KC_W), KC_TRANSPARENT, LCTL(KC_R), LCTL(KC_T),                 KC_TRANSPARENT, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
 		 KC_ESC, MACRO_SAVE, MACRO_LINE, MACRO_TIME, TG(_MOUSE),                      KC_TRANSPARENT, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
-		 MACRO_UNDO, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TG(_NAV),         KC_TRANSPARENT, LCTL(LSFT(KC_TAB)), KC_TRANSPARENT, KC_TRANSPARENT,LCTL(KC_TAB),
+		 MACRO_UNDO, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TG(_NAV),         KC_TRANSPARENT, LCTL(LSFT(KC_TAB)), LALT(KC_LEFT), LALT(KC_RIGHT),LCTL(KC_TAB),
 		                                         KC_TRANSPARENT, KC_TRANSPARENT,         KC_TRANSPARENT, KC_TRANSPARENT),
 
  [_MOUSE] = LAYOUT(KC_TRANSPARENT, LCTL(KC_W), KC_MS_UP, LCTL(KC_R), LCTL(KC_T),                         KC_MEDIA_NEXT_TRACK, KC_UP, KC_MS_WH_UP, KC_PGUP,NO_ARNG,
