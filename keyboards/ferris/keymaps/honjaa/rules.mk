@@ -29,7 +29,7 @@ CAPS_WORD_ENABLE = yes      #enable caps word
 
 #recommended to save space
 LTO_ENABLE = yes 	    # Link time optimization
-SPACE_CADET_ENABLE = no     #auto switch space I think 
-GRAVE_ESC_ENABLE = no       #not sure
-MAGIC_ENABLE = no           #disale magic keys
-MUSIC_ENABLE = no
+SPACE_CADET_ENABLE = no     #disable () when tapping given mod
+GRAVE_ESC_ENABLE = no       #shift or win + esc ` - did not work for NO.
+MAGIC_ENABLE = no           #disable magic keys
+MUSIC_ENABLE = no	    #disable music keys
