@@ -15,17 +15,12 @@ On tapping the keys, our base layer is qwerty with space on the right homing thu
 In this layer, the non-homing-thumb positions swicht temporarly to layer 1 Left hand modifiers and Numbers (left) and layer 2 Right hand modifiers and Symbols (right)
 
 Combos
-enter = j+h
-esc = d+f
-del = s+d
-shift = f+r and j+u
-ctrl = d+e and k+i
+del = d+f
+CTRL+l = t+y
 flash = q+p
+CAPS word = z+-
 
-c+- combos on all layers should get you back to base layer
-
-pressing the key above where the on shot modifer would be on layer 2 and 3 together with the butten where the one shot modifier would be will give the same modifier.
-E.g. u+j gives shift, k+i gives ctrl and so on.
+c+- combos on all layers should get you back to base layer by doing a reset
 
 ### Layer 1: Left Modifiers and Numbers
 
@@ -60,9 +55,3 @@ m,. are down arrow, mouse scroll down and page down
 h is play / pause toggle
 y is media player forward and n is media player back
 
-
-
-Issues:
-I don't have umlauts anywhere.
-Combinations like ctrl+alt+end can be an issue, but possilby less now that I have added modifier combos.
-Knowing which layer one is on can be an issue, but  possilby less now that I have added base layer combos.
